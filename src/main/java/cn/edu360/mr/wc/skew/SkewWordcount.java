@@ -37,7 +37,7 @@ public class SkewWordcount {
 
 			String[] words = value.toString().split(" ");
 			for (String w : words) {
-				k.set(w + "\001" + random.nextInt(numReduceTasks));
+				k.set(w + "\001" + random.nextInt(numReduceTasks)); //\001不可打印字符，可查看ASCII表
 				context.write(k, v);
 
 			}
